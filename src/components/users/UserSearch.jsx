@@ -19,9 +19,9 @@ function UserSearch() {
         if(text === '') {
             setAlert('Please enter something', 'error')
         } else {
-          dispatchEvent({type: 'SET_LOADING'})
+          dispatch({type: 'SET_LOADING'})
             const users = await searchUsers(text)
-            dispatchEvent({type: 'GET_USERS', payload: users})
+            dispatch({type: 'GET_USERS', payload: users})
             setText('')
         }
     }
